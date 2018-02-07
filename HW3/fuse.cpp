@@ -1,6 +1,6 @@
-#include <fuse.h>
+#include "fuse.h"
 
-bool burn(){
+bool Fuse::burn(){
 	time--;
 	if(time == 0){
 		return false;
@@ -8,13 +8,15 @@ bool burn(){
 	return true;
 }
 
-string to_string(){
+string Fuse::to_string(){
+	string s = "";
 	if(time == 10){
-		cout<<" __*"<<endl;
+		s+=" __*\n";
 	}else{
 		for(int i = 0; i<time ;i++){
-			cout<<" |"<<endl;
+			s+=" |\n";
 		}
 	}
-	cout<<",+,"<<endl<<"| |"<<endl<<"| |"<<endl"|_|"<<endl;
+	s+=",+,\n| |\n| |\n|_|\n";
+	return s;
 }

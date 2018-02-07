@@ -4,7 +4,7 @@ using namespace std;
 
 class Fuse{
 private:
-	int time = 10;
+	int time;
 public:
 	Fuse(int time){
 		this->time = time;

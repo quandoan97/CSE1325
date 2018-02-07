@@ -1,26 +1,38 @@
-#include<puzzle.h>
+#include "puzzle.h"
 
-bool puzzle::guess(char c){
+bool Puzzle::guess(char c){
 	if( ((int)c >= 97 && (int)c <= 122) && !guesses[(int)c] ){
 		guesses[(int) c] = true;		
 		return true;
+	}else if((int)c >= 'A' && (int)c<= 'Z'){
+		cout<<"Enter in a lower case letter."<<endl;
+		return true;	
 	}else return false;
 }
 
-bool puzzle::solve(string proposed_solution){
-	if(propsed_solution == solution){
+bool Puzzle::solve(string proposed_solution){
+	if(proposed_solution.compare(solution) == 0){
 		return true;
 	}else return false;
 }
 
-string puzzle::to_string(){
-	for(int i = 0; i < solution.size(); i++){
-		if(guesses[(int)solution.at[i]]){
-			cout<<solution.at[i];
-		}else cout<<"_";
+string Puzzle::to_string(){
+	string s = "";
+	for(unsigned int i = 0; i < solution.size(); i++){
+		if(guesses[(int)solution.at(i)]){
+			s+=solution.at(i);
+		}
+
+		else if(solution.at(i) == ' '){
+			s+=" ";
+		}
+
+		else s+="_";
 	}
+
+	return s;
 }
 
-string puzzle::get_solution(){
+string Puzzle::get_solution(){
 	return solution;
 }

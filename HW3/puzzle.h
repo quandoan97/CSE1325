@@ -9,7 +9,7 @@ private:
 public:
 	Puzzle(string solution){
 		this->solution = solution;
-		for(int i = 0; i<guesses.size(); i++){
+		for(unsigned int i = 0; i<sizeof(guesses); i++){
 			guesses[i] = false;
 		}
 	}
