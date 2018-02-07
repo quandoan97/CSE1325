@@ -21,4 +21,4 @@ public:
 	string to_string();
 	
 	string get_solution();
-}
+};
