@@ -1,7 +1,7 @@
-makefile:
+CPPFLAGS = -Wall -O0 -g -std=c++11
 
-all: output
+main: main.cpp puzzle.cpp fuse.cpp
+	g++ -o main main.cpp puzzle.cpp fuse.cpp
+
 clean:
-	-rm a.out
-output: main.cpp puzzle.cpp fuse.cpp
-		g++ -o output main.cpp
+	rm -f main 

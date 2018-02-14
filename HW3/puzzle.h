@@ -10,7 +10,10 @@ public:
 	Puzzle(string solution){
 		this->solution = solution;
 		for(unsigned int i = 0; i<sizeof(guesses); i++){
-			guesses[i] = false;
+			guesses[i] = true;
+		}
+		for(unsigned int i = 0; i < solution.length(); i++){
+			guesses[(int)solution.at(i)] = false;
 		}
 	}
 	

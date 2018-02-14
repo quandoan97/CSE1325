@@ -11,7 +11,7 @@ int main(){
 	getline(std::cin,solution);
 	Puzzle mypuzzle(solution);
 	for(int i = 0; i<50; i++){
-		cout<<endl;
+		cout<< endl;
 	}
 	
 	Fuse myfuse(10);
@@ -29,6 +29,7 @@ int main(){
 			cout<<"What is the solution?"<<endl;
 			getline(std::cin, buffer);
 			getline(std::cin, answer);
+			cout << endl;
 			if(mypuzzle.solve(answer)){
 				cout<<"*** WINNER WINNER CHICKEN DINNER ***" <<endl;
 				break;
@@ -37,17 +38,17 @@ int main(){
 				break;								
 			}
 		}
-		else{
-			if(mypuzzle.guess(input)){
-				myfuse.to_string();
-				mypuzzle.to_string();			
-			}
-			else{
-				myfuse.burn();
-				myfuse.to_string();
-				mypuzzle.to_string();
-			}
-		}
+		else if(!mypuzzle.guess(input)){
+				if(!myfuse.burn()){
+					cout << "GAME OVER" << endl;
+					cout << "The answer was: " << mypuzzle.get_solution() << endl;
+					break;
+				}
+		}			
+		
+		cout << myfuse.to_string();
+		cout << mypuzzle.to_string();
+			
 		cout<<"Enter in a lowercase letter to guess,"<<endl<<"! to propose a solution"<<endl<<"0 to exit"<<endl;	
 		cin>>input;
 	}

@@ -1,8 +1,9 @@
 #include "puzzle.h"
 
 bool Puzzle::guess(char c){
+	cout << "in guess" << endl;
 	if( ((int)c >= 97 && (int)c <= 122) && !guesses[(int)c] ){
-		guesses[(int) c] = true;		
+		guesses[(int) c] = true;
 		return true;
 	}else if((int)c >= 'A' && (int)c<= 'Z'){
 		cout<<"Enter in a lower case letter."<<endl;
@@ -29,7 +30,7 @@ string Puzzle::to_string(){
 
 		else s+="_";
 	}
-
+	s+= "\n";
 	return s;
 }
 
