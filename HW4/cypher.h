@@ -7,7 +7,7 @@ using namespace std;
 
 class Cypher{
 	private:
-		int chars;
+		int _chars;
 	public:
 		Cypher(){}
 		
