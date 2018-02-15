@@ -7,6 +7,7 @@ string Substitution::encrypt(string unencrypted){
 	int _dekey_pos;										//This gives the position for the _key (abcde)
 	bool to_capital;
 	for(int i = 0; i < unencrypted.size(); i++){
+		this->chars_processed(1);
 		letter = unencrypted.at(i);
 		if(letter != ' '){
 			if((int)letter >= 65 && (int)letter <= 90){
@@ -38,6 +39,7 @@ string Substitution::decrypt(string unencrypted){
 	int _dekey_pos;										//This gives the position for the _key (abcde)
 	bool to_capital;
 	for(int i = 0; i < unencrypted.size(); i++){
+		this->chars_processed(1);
 		letter = unencrypted.at(i);
 		if(letter != ' '){
 			if((int)letter >= 65 && (int)letter <= 90){
@@ -69,6 +71,7 @@ string Substitution::substitute(string original, string key){
 	int _dekey_pos;										//This gives the position for the _key (abcde)
 	bool to_capital;
 	for(int i = 0; i < original.size(); i++){
+		this->chars_processed(1);
 		letter = original.at(i);
 		if(letter != ' '){
 			if((int)letter >= 65 && (int)letter <= 90){
