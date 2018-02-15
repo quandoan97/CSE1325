@@ -2,8 +2,8 @@
 
 class Substitution:public Cypher{
 	private:
-		string key;
-		string dekey;
+		string key;										//This is the key for the encryption that the user will pass in NOT abcdefg
+		string dekey;									//This is just abcdefg
 	public: 
 		Substitution(string key){
 			this->key = key;
@@ -14,5 +14,5 @@ class Substitution:public Cypher{
 		
 		string decrypt(string encrypted);
 	
-		strint substiutute(string original, string key);
+		string substiutute(string original, string key);
 };
