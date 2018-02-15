@@ -1,3 +1,6 @@
+#ifndef __CYPHER_H
+#define __CYPHER_H
+
 #include <iostream> 
 
 using namespace std;
@@ -14,5 +17,6 @@ class Cypher{
 	
 		int chars_processed();
 	protected:
-		//chars_processed(int num);
+		void chars_processed(int num);
 };
+#endif

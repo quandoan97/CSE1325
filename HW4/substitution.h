@@ -1,3 +1,5 @@
+#ifndef __SUBSTITUTION_H
+#define __SUBSTITUTION_H
 #include "cypher.h"
 
 class Substitution:public Cypher{
@@ -14,5 +16,6 @@ class Substitution:public Cypher{
 		
 		string decrypt(string encrypted);
 	
-		string substiutute(string original, string key);
+		string substitute(string original, string key);
 };
+#endif

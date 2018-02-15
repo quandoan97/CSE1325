@@ -1,3 +1,5 @@
+#ifndef __ROT13_H
+#define __ROT13_H
 #include "cypher.h"
 
 class Rot13:public Cypher{
@@ -8,3 +10,4 @@ class Rot13:public Cypher{
 	
 		string decrypt(string encrypted);
 };
+#endif
